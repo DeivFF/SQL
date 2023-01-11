@@ -1,0 +1,23 @@
+/* O UNION é usado para combinar o conjunto de resultados de duas ou mais SELECT instruções.
+
+Cada SELECTinstrução dentro UNIONdeve ter o mesmo número de colunas
+As colunas também devem ter tipos de dados semelhantes
+As colunas em cada SELECTinstrução também devem estar na mesma ordem
+
+resumo: junta duas consultas, uma embaixo da outra.
+*/
+
+/* Una da tabela Production.Product os nomes que contenham dentro de si o nome 'chain' e 'decal' em uma única tabela*/
+SELECT Name,ProductNumber,Color FROM Production.Product
+WHERE Name LIKE '%chain%'
+UNION
+SELECT Name,ProductNumber,Color FROM Production.Product
+WHERE Name LIKE '%decal%'
+
+
+/* Una da tabela Person.Person os titulos que contenham 'MR.' e o MiddleName que contenham 'A' em uma única tabela*/
+SELECT FirstName,Title,MiddleName From Person.Person
+WHERE title = 'Mr.'
+UNION
+SELECT FirstName,Title,MiddleName From Person.Person
+WHERE MiddleName = 'A'

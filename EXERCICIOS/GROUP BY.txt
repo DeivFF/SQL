@@ -1,0 +1,12 @@
+A instrução GROUP BY agrupa linhas que têm os mesmos valores em linhas de resumo, como "encontre o número de clientes em cada país".
+
+A instrução GROUP BY geralmente é usada com funções de agregação com
+( COUNT(), MAX(), MIN(), SUM(), AVG()) 
+para agrupar o conjunto de resultados em uma ou mais colunas.
+
+Basicamente divide o resultado de uma pesquisa em grupos.
+
+SELECT Coluna1, funcaoAgregacao(Coluna2)
+FROM nomeTabela
+GROUP BY coluna 1;
+

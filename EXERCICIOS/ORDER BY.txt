@@ -1,0 +1,25 @@
+-- ORDER BY é usado para classificar o conjunto de resultados em ordem crescente ou decrescente.
+/*
+SELECT coluna1,coluna2
+FROM tabela
+ORDER BY coluna1 asc/desc
+*/
+
+SELECT * FROM Person.Person
+ORDER BY FirstName asc
+
+-- Obter o productID dos 10 produtos mais caros cadastrados no sistema, listando do mais caro para o mais barato
+
+SELECT * FROM Production.Product;
+
+SELECT TOP 10 ProductID FROM Production.Product
+ORDER BY ListPrice desc
+
+-- Obter o nome e número do produto dos produtos que tem o ProductID entre 1-4
+
+SELECT TOP 4 ProductNumber, Name FROM Production.Product
+ORDER BY ProductID
+
+SELECT ProductNumber, Name FROM Production.Product
+WHERE ProductID <= 4
+ORDER BY ProductID

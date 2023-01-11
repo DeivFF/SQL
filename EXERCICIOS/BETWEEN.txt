@@ -1,0 +1,10 @@
+-- O BETWEENoperador seleciona valores dentro de um determinado intervalo. Os valores podem ser números, texto ou datas.
+
+SELECT * FROM Production.Product
+
+SELECT * FROM Production.Product
+WHERE ListPrice between 1000 and 1500
+
+SELECT * FROM Production.Product
+WHERE ListPrice not between 1000 and 1500
+

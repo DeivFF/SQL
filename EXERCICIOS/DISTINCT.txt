@@ -1,0 +1,6 @@
+DISTINCT - Quando deseja omitir os dados duplicados, e deseja que seja retornado somente os dados únicos
+
+SELECT COUNT( DISTINCT FirstName) from Person.Person -> Conta a quantidade de nomes únicos na tabela person.person
+SELECT DISTINCT FirstName from Person.Person -> Retorna somente o FirstName único, sem repetir nenhum dado.
+
+EXERCICIO -> Quantos FirstName únicos temos na tabela? 1018

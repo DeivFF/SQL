@@ -1,0 +1,30 @@
+
+/* retorna todos os registros da tabela à esquerda (tabela1) e os registros correspondentes da tabela à direita (tabela2).
+ O resultado é NULL do lado direito, se não houver correspondência. */
+
+
+
+ /* Como descobrir quantas pessoas possuem cartão de crédito e quantas não possuem.
+
+ Para isso é necessário realizar um LEFT JOIN, em relação a tabela Person.Person e a tabela Sales.PersonCreditCard
+ Os resultados que a coluna CreditCardID sair nulo, serão as pessoas que não possuem cartão cadastrado, pois ali não terá nenhuma
+ correspondência.
+ 
+ */
+SELECT * FROM Person.Person
+
+SELECT * FROM Sales.PersonCreditCard
+
+SELECT * FROM Person.Person AS PP
+LEFT JOIN Sales.PersonCreditCard PC ON PC.BusinessEntityID = PP.BusinessEntityID 
+WHERE CreditCardID IS NULL
+-- TODAS AS PESSOAS QUE NÃO POSSUEM CARTÃO DE CRÉDITO
+
+SELECT * FROM Person.Person AS PP
+LEFT JOIN Sales.PersonCreditCard PC ON PC.BusinessEntityID = PP.BusinessEntityID
+-- TODAS AS PESSOAS QUE POSSUEM OU NÃO CARTÃO DE CRÉDITO
+
+SELECT * FROM Person.Person AS PP
+LEFT JOIN Sales.PersonCreditCard PC ON PC.BusinessEntityID = PP.BusinessEntityID 
+WHERE CreditCardID IS NOT NULL
+-- TODAS AS PESSOAS QUE POSSUEM CARTÃO DE CRÉDITO

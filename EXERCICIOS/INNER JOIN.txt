@@ -1,0 +1,28 @@
+INNER JOIN seleciona registros que possuem valores correspondentes em ambas as tabelas.
+
+SINTAXE
+
+SELECT column_name(s) FROM table1
+INNER JOIN table2 ON table1.column_name = table2.column_name;
+
+------------------------------------------------------------------------------------------------------
+Utilizando a tabela Production.Product e Production.ProductSubcategory
+Pegue o nome do produto, o preço do produto e o nome da subcategoria do produto.
+
+SELECT P.Name, P.ListPrice, S.ProductSubcategoryID FROM Production.Product AS P
+INNER JOIN Production.ProductSubcategory S ON S.ProductSubcategoryID = P.ProductSubcategoryID
+------------------------------------------------------------------------------------------------------
+Utilizando a tabela Person.PhoneNumberType e a tabela Person.PersonPhone
+Pegue o businessEntityID, Name, PhoneNumberTypeID,PhoneNumber
+
+SELECT PP.BusinessEntityID, PP.PhoneNumber, PNT.Name, PNT.PhoneNumberTypeID FROM Person.PersonPhone AS PP
+INNER JOIN Person.PhoneNumberType PNT ON PNT.PhoneNumberTypeID = PP.PhoneNumberTypeID
+------------------------------------------------------------------------------------------------------
+Utilizando a tabela Person.Address e a tabela Person.Stateprovince
+Pegue o AddressID, City, StateProvinceID, Nome do estado
+
+SELECT * FROM Person.Address;
+SELECT * FROM Person.StateProvince;
+
+SELECT PA.City, PA.AddressID, PS.StateProvinceID, PS.Name  FROM Person.Address PA
+INNER JOIN Person.StateProvince PS ON PS.StateProvinceID = PA.StateProvinceID
